@@ -9,4 +9,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
   //не прописываем никакую логику, потому что spring уже знает что требуется,
   //нужно только знать название методов
+
+  //если нужно добавить доп.методы, можно это сделать. Если его назвать, пользуясь подсказками,
+  //то его не придется реализовывать:
+  public List<Employee> findAllByName(String name);
 }
